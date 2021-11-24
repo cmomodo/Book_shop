@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <title>stock</title>
+    </head>
+    <body style="background-color: #D291BC;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Bookstore</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="checkout">checkout</a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Cart: <img style='width: 22px;' src='/static/shopping-cart (1).png'> <span class="sr-only">{{cart}}</span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        <a href='/addStock'><button method='GET' style=' font-size: 25px; margin-top: 10%; margin-left: 25%; margin-right: 50%; width: 50%; background: #76C48E;' type="button" class="btn ">Create</button></a>
+        
+        {% for cart in stock_iter %}
+            <div class="card" style="margin-bottom: 20px; margin-left: 25%; margin-right: 25%; margin-top: 20px; text-align: center; width: 50%;">
+                <a href='/delete/{{ cart.isbn }}'><img style=" float:left; padding-top: 12px; padding-left: 12px; width: 45px" src="static/close.png"></a>
+                <div class="card-body">
+                    <h3 class="card-text">ISBN: {{cart.isbn}}</h3>
+                    <h4 class="card-title">Name: {{cart.name}}</h4>
+                    <h4 class="card-text">Quantity: {{cart.quantity}}</h4>
+                    <img class="card-img-bottom" style="width: 200px;" src="{{cart.picture}}"></img><br>
+                    <a href='addToCart/{{cart.isbn}}' style='width:33vw;'><button class='btn-outline-success' style='width:33vw;'><img style='width:50px; height: 50px;' src="static/add-to-cart.png"></button></a>
+                </div>
+            </div>
+        {% endfor %}
+    </body>
+</html>

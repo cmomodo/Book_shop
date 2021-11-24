@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <title>stock</title>
+    </head>
+    <body style="background-color: #f4b41a;">
+        
+        <div class="card" style=" height: 55vh; margin-left: 25%; margin-right: 25%; margin-top: 20px; text-align: center; width: 50%;">
+            
+            <div style='margin-top: 10vh;' class="card-body">
+                <h1>Your Total Is:</h1>
+                <h3>£{{ price1 }}</h3>
+                <h3> Shipping Fee's: £1 </h3>
+                <br>
+                <h1>Your Total is: <u>£{{ price2 }}</u></h1>
+            </div>
+            
+            <a href='/reinitialise' >
+                <button class='btn-outline-success' style='width:25vw; margin-bottom: 66px; '>
+                    <h2> Checkout </h2>
+                </button>
+            </a>
+        </div>
+    </body>
+</html>
